@@ -1,0 +1,117 @@
+{
+  "id": "/",
+  "scope": "/",
+  "name": "بند ساز",
+  "short_name": "بند ساز",
+  "description": "تمرینان دسته بندی شده بدن سازی",
+  "start_url": "/",
+  "display": "fullscreen",
+  "background_color": "#0f1730",
+  "theme_color": "#ff4f00",
+  "orientation": "portrait-primary",
+  "lang": "fa",
+  "dir": "rtl",
+  "display_override": ["fullscreen", "standalone", "window-controls-overlay"],
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "icons": [
+    {
+      "src": "/assets/icons/favicon-48-48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/favicon-72-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/favicon-96-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/favicon-144-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/favicon-192-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/favicon-512-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/favicon-512-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["utilities", "productivity", "tools"],
+  "screenshots": [
+    {
+      "src": "/assets/screenshots/01.jpg",
+      "sizes": "576x1280",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "صفحه اصلی"
+    },
+    {
+      "src": "/assets/screenshots/02.jpg",
+      "sizes": "576x1280",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "لیست ابزارها"
+    },
+    {
+      "src": "/assets/screenshots/03.jpg",
+      "sizes": "576x1280",
+      "type": "image/jpeg",
+      "form_factor": "narrow",
+      "label": "بند ساز"
+    },
+    {
+      "src": "/assets/screenshots/04.jpg",
+      "sizes": "1853x897",
+      "type": "image/jpeg",
+      "form_factor": "wide",
+      "label": "بند ساز"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "بند ساز",
+      "short_name": "بند ساز",
+      "description": "دسترسی سریع به بند ساز",
+      "url": "/",
+      "icons": [
+        {
+          "src": "/assets/icons/favicon-192-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "share_target": {
+    "action": "/",
+    "method": "GET",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
+}
