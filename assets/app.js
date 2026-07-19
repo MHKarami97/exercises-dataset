@@ -162,7 +162,7 @@ function renderGrid() {
   if (slice.length === 0) {
     const empty = document.createElement("div");
     empty.className = "empty-state";
-    empty.innerHTML = "<p>🔍</p><p>No exercises found</p>";
+    empty.innerHTML = "<p>🔍</p><p>تمرینی پیدا نشد. لطفا از زبان انگلیسی برای جستجو استفاده کنید.</p>";
     gridEl.appendChild(empty);
     spinnerEl.classList.remove("visible");
     return;
@@ -266,8 +266,8 @@ function updateResultsBar() {
   const all = state.exercises.length;
   countEl.textContent =
     total === all
-      ? `${all.toLocaleString()} exercises`
-      : `${total.toLocaleString()} of ${all.toLocaleString()} exercises`;
+      ? `${all.toLocaleString()} تمرین`
+      : `${total.toLocaleString()} از ${all.toLocaleString()} تمرین`;
 }
 
 function updateActiveBadges() {
@@ -325,9 +325,9 @@ function openModal(id) {
   // Meta chips
   modalMeta.innerHTML = "";
   const metaItems = [
-    { label: "Body Part", value: ex.body_part || ex.category },
-    { label: "Equipment", value: ex.equipment },
-    { label: "Target", value: ex.target },
+    { label: "قسمت بدن", value: ex.body_part || ex.category },
+    { label: "تجهیزات", value: ex.equipment },
+    { label: "هدف", value: ex.target },
   ];
   metaItems.forEach(({ label, value }) => {
     const chip = document.createElement("div");
@@ -345,7 +345,7 @@ function openModal(id) {
 
   const musclesHeader = document.createElement("div");
   musclesHeader.className = "modal-muscles-label";
-  musclesHeader.textContent = "Muscles";
+  musclesHeader.textContent = "عضلات";
   modalMuscles.appendChild(musclesHeader);
 
   const musclesGrid = document.createElement("div");
@@ -392,14 +392,15 @@ function openModal(id) {
   if (langs.length > 0) {
     const instrLabel = document.createElement("span");
     instrLabel.className = "modal-instructions-label";
-    instrLabel.textContent = "Instructions";
+    instrLabel.textContent = "دستورالعمل";
     modalInstr.appendChild(instrLabel);
 
     const list = document.createElement("ol");
     list.className = "instructions-list";
 
-    function renderSteps(steps) {
+    function renderSteps(steps, langCode) {
       list.innerHTML = "";
+      list.classList.toggle("rtl", langCode === "fa");
       steps.forEach((step, i) => {
         const li = document.createElement("li");
         li.className = "instruction-step";
@@ -424,12 +425,12 @@ function openModal(id) {
         btn.addEventListener("click", () => {
           tabButtons.forEach((b) => b.classList.remove("active"));
           btn.classList.add("active");
-          renderSteps(langs[i].steps);
+          renderSteps(langs[i].steps, langs[i].code);
         });
       });
     }
 
-    renderSteps(langs[0].steps);
+    renderSteps(langs[0].steps, langs[0].code);
     modalInstr.appendChild(list);
   }
 

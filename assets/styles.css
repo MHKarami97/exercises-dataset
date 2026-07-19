@@ -769,6 +769,12 @@ body {
   color: var(--text-secondary);
 }
 
+.instructions-list.rtl {
+  direction: rtl;
+  text-align: right;
+  align-items: flex-start;
+}
+
 /* ── Responsive ─────────────────────────────────── */
 @media (max-width: 768px) {
   /* Layout */
