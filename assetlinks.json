@@ -9,7 +9,7 @@ permalink: .well-known/assetlinks.json
       "namespace": "android_app",
       "package_name": "mhk.sport",
       "sha256_cert_fingerprints": [
-        ""
+        "FE:26:7B:1A:B5:A4:CE:44:59:F7:67:A5:D0:F6:1B:75:64:C8:8B:EB:B6:64:47:8E:30:DD:E1:31:33:42:C3:D9"
       ]
     }
   },
@@ -19,7 +19,7 @@ permalink: .well-known/assetlinks.json
       "namespace": "cafebazaar_twa",
       "package_name": "mhk.sport",
       "sha256_cert_fingerprints": [
-        ""
+        "FE:26:7B:1A:B5:A4:CE:44:59:F7:67:A5:D0:F6:1B:75:64:C8:8B:EB:B6:64:47:8E:30:DD:E1:31:33:42:C3:D9"
       ]
     }
   }
