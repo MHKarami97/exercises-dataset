@@ -775,6 +775,11 @@ body {
   align-items: flex-start;
 }
 
+.instructions-list.ltr {
+  direction: ltr;
+  text-align: left;
+}
+
 /* ── Responsive ─────────────────────────────────── */
 @media (max-width: 768px) {
   /* Layout */
@@ -1178,4 +1183,8 @@ body {
 .rtl-text {
   direction: rtl;
   text-align: right;
+}
+
+.rtl-just {
+  direction: rtl;
 }

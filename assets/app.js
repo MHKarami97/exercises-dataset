@@ -162,7 +162,7 @@ function renderGrid() {
   if (slice.length === 0) {
     const empty = document.createElement("div");
     empty.className = "empty-state";
-    empty.innerHTML = "<p>🔍</p><p>تمرینی پیدا نشد. لطفا از زبان انگلیسی برای جستجو استفاده کنید.</p>";
+    empty.innerHTML = "<p>🔍</p><p>تمرینی پیدا نشد</p>";
     gridEl.appendChild(empty);
     spinnerEl.classList.remove("visible");
     return;
@@ -223,7 +223,7 @@ function createCard(ex) {
   name.textContent = ex.name;
 
   const tags = document.createElement("div");
-  tags.className = "card-tags";
+  tags.className = "card-tags rtl-text";
 
   const catTag = document.createElement("span");
   catTag.className = "tag tag-cat";
@@ -292,7 +292,7 @@ function updateActiveBadges() {
   if (hasAny) {
     const clearAll = document.createElement("button");
     clearAll.className = "clear-all";
-    clearAll.textContent = "Clear all";
+    clearAll.textContent = "پاک کردن همه";
     clearAll.addEventListener("click", clearAllFilters);
     activeFilEl.appendChild(clearAll);
   }
@@ -371,10 +371,10 @@ function openModal(id) {
   };
 
   if (primaryMuscles.length > 0)
-    musclesGrid.appendChild(makeMuscleGroup("Primary", primaryMuscles, true));
+    musclesGrid.appendChild(makeMuscleGroup("اصلی", primaryMuscles, true));
   if (secondaryMuscles.length > 0)
     musclesGrid.appendChild(
-      makeMuscleGroup("Secondary", secondaryMuscles, false),
+      makeMuscleGroup("ثانوی", secondaryMuscles, false),
     );
   if (primaryMuscles.length > 0 || secondaryMuscles.length > 0)
     modalMuscles.appendChild(musclesGrid);
@@ -401,6 +401,7 @@ function openModal(id) {
     function renderSteps(steps, langCode) {
       list.innerHTML = "";
       list.classList.toggle("rtl", langCode === "fa");
+      list.classList.toggle("ltr", langCode !== "fa");
       steps.forEach((step, i) => {
         const li = document.createElement("li");
         li.className = "instruction-step";
