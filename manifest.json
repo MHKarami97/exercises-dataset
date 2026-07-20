@@ -1,9 +1,9 @@
 {
   "id": "/",
   "scope": "/",
-  "name": "بند ساز",
-  "short_name": "بند ساز",
-  "description": "تمرینان دسته بندی شده بدن سازی",
+  "name": "بدن ساز",
+  "short_name": "بدن ساز",
+  "description": "تمرینان دسته بدنی شده بدن سازی",
   "start_url": "/",
   "display": "fullscreen",
   "background_color": "#0f1730",
@@ -72,28 +72,28 @@
       "sizes": "576x1280",
       "type": "image/jpeg",
       "form_factor": "narrow",
-      "label": "لیست ابزارها"
+      "label": "بدن ساز"
     },
     {
       "src": "/assets/screenshots/03.jpg",
       "sizes": "576x1280",
       "type": "image/jpeg",
       "form_factor": "narrow",
-      "label": "بند ساز"
+      "label": "بدن ساز"
     },
     {
       "src": "/assets/screenshots/04.jpg",
       "sizes": "1853x897",
       "type": "image/jpeg",
       "form_factor": "wide",
-      "label": "بند ساز"
+      "label": "بدن ساز"
     }
   ],
   "shortcuts": [
     {
-      "name": "بند ساز",
-      "short_name": "بند ساز",
-      "description": "دسترسی سریع به بند ساز",
+      "name": "بدن ساز",
+      "short_name": "بدن ساز",
+      "description": "دسترسی سریع به بدن ساز",
       "url": "/",
       "icons": [
         {
