@@ -31,14 +31,10 @@
     <aside class="sidebar">
       <div class="sidebar-header">
         <div class="sidebar-logo">بدن <span>ساز</span></div>
-        <a class="db-setup-btn" href="https://mhkarami97.ir" target="_blank" title="Database Setup">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
-            stroke-linejoin="round">
-            <ellipse cx="8" cy="4" rx="6" ry="2.5" />
-            <path d="M2 4v3c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5V4" />
-            <path d="M2 7v3c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5V7" />
-            <path d="M2 10v2c0 1.38 2.69 2.5 6 2.5s6-1.12 6-2.5v-2" />
-          </svg>
+        <button class="db-setup-btn" id="contact-btn" title="Contact" type="button">
+          📞
+        </button>
+        <a class="db-setup-btn" href="https://mhkarami97.ir" target="_blank" title="Mohammad Hossein Karami">
           mhkarami97
         </a>
       </div>
@@ -101,6 +97,33 @@
       <div class="modal-meta" id="modal-meta"></div>
       <div class="modal-muscles" id="modal-muscles"></div>
       <div class="modal-instructions" id="modal-instructions"></div>
+    </div>
+  </div>
+
+  <!-- Contact Form Modal -->
+  <div class="contact-overlay" id="contact-overlay" role="dialog" aria-modal="true" aria-labelledby="contact-title">
+    <div class="contact-panel rtl-text">
+      <div class="contact-header">
+        <h2 class="contact-title" id="contact-title">تماس با ما</h2>
+        <button class="contact-close" id="contact-close" aria-label="Close">✕</button>
+      </div>
+      <form class="contact-form" id="contact-form" action="https://formspree.io/f/mpzbwnop" method="POST">
+        <div class="contact-field">
+          <label for="contact-name">نام</label>
+          <input type="text" id="contact-name" name="name" required placeholder="نام خود را وارد کنید" />
+        </div>
+        <div class="contact-field">
+          <label for="contact-email">ایمیل</label>
+          <input type="email" id="contact-email" name="email" required placeholder="example@email.com" />
+        </div>
+        <div class="contact-field">
+          <label for="contact-message">پیام</label>
+          <textarea id="contact-message" name="message" rows="4" required
+            placeholder="پیام خود را بنویسید..."></textarea>
+        </div>
+        <button type="submit" class="contact-submit">ارسال</button>
+        <div class="contact-success" id="contact-success">پیام شما با موفقیت ارسال شد ✅</div>
+      </form>
     </div>
   </div>
 

@@ -541,7 +541,7 @@ window.addEventListener('beforeinstallprompt', (e) => {
     deferredPrompt = e;
 
     if (!installPromptDismissed) {
-        showInstallPrompt();
+    showInstallPrompt();
     }
 });
 
@@ -671,3 +671,46 @@ window.addEventListener('appinstalled', () => {
     console.log('App installed successfully');
     deferredPrompt = null;
 });
+
+// ── Contact Modal ────────────────────────────────────
+(function () {
+  const contactBtn = document.getElementById('contact-btn');
+  const contactOverlay = document.getElementById('contact-overlay');
+  const contactClose = document.getElementById('contact-close');
+  const contactForm = document.getElementById('contact-form');
+  const contactSuccess = document.getElementById('contact-success');
+
+  function openContact() {
+    contactOverlay.classList.add('open');
+    contactClose.focus();
+  }
+
+  function closeContact() {
+    contactOverlay.classList.remove('open');
+    contactForm.reset();
+    contactSuccess.classList.remove('show');
+  }
+
+  contactBtn.addEventListener('click', openContact);
+  contactClose.addEventListener('click', closeContact);
+  contactOverlay.addEventListener('click', (e) => {
+    if (e.target === contactOverlay) closeContact();
+  });
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { Accept: 'application/json' },
+      });
+      if (res.ok) {
+        contactSuccess.classList.add('show');
+        contactForm.reset();
+      }
+    } catch {
+      // silent
+    }
+  });
+})();

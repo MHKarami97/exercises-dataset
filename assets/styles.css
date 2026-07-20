@@ -40,6 +40,7 @@ summary::-webkit-details-marker {
   --border: #e4e4e7;
   --border-hover: #c4c4c7;
   --accent: #ff4f00;
+  --accent2: #de875f;
   --accent-muted: rgba(255, 79, 0, 0.08);
   --text-primary: #111111;
   --text-secondary: #71717a;
@@ -934,6 +935,7 @@ body {
     background 0.15s;
   white-space: nowrap;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .db-setup-btn svg {
@@ -1268,4 +1270,150 @@ body {
 
 .close-install:hover {
   opacity: 1;
+}
+
+/* ── Contact Modal ──────────────────────────────── */
+.contact-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  padding: 16px;
+}
+
+.contact-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.contact-panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  width: min(500px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  transform: translateY(10px) scale(0.98);
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-overlay.open .contact-panel {
+  transform: translateY(0) scale(1);
+}
+
+.contact-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 18px 0;
+}
+
+.contact-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.contact-close {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  color: var(--text-tertiary);
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: color 0.15s, background 0.15s;
+}
+
+.contact-close:hover {
+  color: var(--text-primary);
+  background: var(--bg-elevated);
+}
+
+.contact-form {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.contact-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.contact-field input,
+.contact-field textarea {
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+  border-color: var(--accent);
+}
+
+.contact-field textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.contact-submit {
+  padding: 10px 20px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.contact-submit:hover {
+  opacity: 0.9;
+}
+
+.contact-success {
+  display: none;
+  text-align: center;
+  color: #22c55e;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 0;
+}
+
+.contact-success.show {
+  display: block;
 }
